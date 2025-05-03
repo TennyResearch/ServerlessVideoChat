@@ -10,4 +10,4 @@ This repository accompanies the Udemy course and provides you all of the project
 
 Each folder is named after the project we are working on. Each folder as a starter and final folder that contains the code before and after the lecture. If you get lost during a lecture or can't quite get things working you can aways move on the next lecture and use the starter project for that lecture.
 
-For example, in lecture 7 we start building the Helloworld app. In the HelloWorld-Part1 folder we have both the starter and final folders. The starter folder contains the code at the start of the lecture. The final folder has the code we had up to the end of the lecture. In lecture 8, we continue with the code in HelloWorld-Part2.
+For example, in lecture 7 we start building the helloworld app. In the helloworld-1 folder we have both the starter and final folders. The starter folder contains the code at the start of the lecture. The final folder has the code we had up to the end of the lecture. In lecture 8, we continue with the code in helloworld-2.
