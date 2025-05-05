@@ -6,8 +6,8 @@ Welcome to my Udemy course! In this course we will build a complete serverless v
 
 ## Structure of this Respository
 
-This repository accompanies the Udemy course and provides you all of the projects, code and resources we use throughout the course.
+This repository accompanies the Udemy course and provides you all of the code and resources we use throughout the course.
 
-Each folder is named after the project we are working on. Each folder as a starter and final folder that contains the code before and after the lecture. If you get lost during a lecture or can't quite get things working you can aways move on the next lecture and use the starter project for that lecture.
+For each lecture that we work on code, there is a folder with a starter project. This starter project represents the project progress up to that lecture in the course. If you get stuck in a lecture and you can't get the code to work, just look to the next lecture's starter project and that will give you the final code for the current project. Or, if you just want to move on, you can use the starter project in the next lecture to keep up with the course.
 
-For example, in lecture 7 we start building the helloworld app. In the helloworld-1 folder we have both the starter and final folders. The starter folder contains the code at the start of the lecture. The final folder has the code we had up to the end of the lecture. In lecture 8, we continue with the code in helloworld-2.
+The final project has the complete code at the end of the course. I hope you enjoy this course! Don't forget, if you have suggestions, improvments, or new functionality you would like to see incorporated in the course, just clone the repository, make your changes and submit a pull request.
