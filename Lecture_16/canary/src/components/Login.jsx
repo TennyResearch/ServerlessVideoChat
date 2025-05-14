@@ -1,9 +1,13 @@
 import { useAuth } from "../contexts/AuthProvider";
 import { useState } from "react";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Login() {
   const { login, isAuthenticated } = useAuth();
+
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
@@ -12,6 +16,16 @@ function Login() {
     e.preventDefault();
     login(email, password);
   }
+
+  useEffect(
+    function () {
+      if (isAuthenticated) {
+        navigate("/app", { replace: true });
+      }
+    },
+    [isAuthenticated, navigate],
+  );
+
   return (
     <main className="m-10 px-10">
       <form onSubmit={doSubmit} className="m-32 flex flex-col gap-2 px-8">
