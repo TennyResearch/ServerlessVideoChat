@@ -8,7 +8,7 @@ const initialState = {
   videoSource: null,
   audioSource: null,
   availableVideoSources: [],
-  availableAudioSource: [],
+  availableAudioSources: [],
   showRemoteStream: false,
   error: "",
 };
