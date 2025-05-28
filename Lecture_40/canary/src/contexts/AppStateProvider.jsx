@@ -64,6 +64,18 @@ function reducer(state, action) {
   }
 }
 
+function initCallSetup() {
+  ICECandidates = [];
+  return {
+    callerEmail: null,
+    callerConnectionId: null,
+    calleeEmail: null,
+    calleeConnectionId: null,
+    offer: null,
+    answer: null,
+  };
+}
+
 function AppStateProvider({ children }) {
   const [
     {
@@ -85,18 +97,6 @@ function AppStateProvider({ children }) {
   function initCallDirection(caller, callee) {
     iAmTheCaller = caller;
     iAmTheCallee = callee;
-  }
-
-  function initCallSetup() {
-    ICECandidates = [];
-    return {
-      callerEmail: null,
-      callerConnectionId: null,
-      calleeEmail: null,
-      calleeConnectionId: null,
-      offer: null,
-      answer: null,
-    };
   }
 
   async function startCall(toEmail) {

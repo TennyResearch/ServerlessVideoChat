@@ -3,7 +3,7 @@ import json
 import logging
 from datetime import datetime, timezone
 
-dynamodb = boto3.resource("dyanamodb")
+dynamodb = boto3.resource("dynamodb")
 table_name = "Connections"
 logger = logging.getLogger()
 logger.setLevel("INFO")
