@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadTable",
+      "Effect": "Allow",
+      "Action": ["dynamodb:GetItem", "dynamodb:Scan", "dynamodb:DeleteItem"],
+      "Resource": "arn:aws:dynamodb:*:*:table/Connections"
+    }
+  ]
+}
