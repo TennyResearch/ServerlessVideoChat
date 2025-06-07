@@ -4,16 +4,8 @@ import { useAppState } from "../contexts/AppStateProvider";
 import { useAuth } from "react-oidc-context";
 
 function Header() {
-  const signOutRedirect = () => {
-    const clientId = "4tj2p5qmgtv47ag37qqg2iqns5";
-    const logoutUri = "https://localhost:5174?state=logout";
-    const cognitoDomain =
-      "https://us-east-2nmxpojrpq.auth.us-east-2.amazoncognito.com";
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
-  };
-
   const { isAuthenticated, signinRedirect } = useAuth();
-  const { closeConnections, appStateLogout } = useAppState();
+  const { closeConnections, appStateLogout, signOutRedirect } = useAppState();
 
   function handleLogout() {
     closeConnections();

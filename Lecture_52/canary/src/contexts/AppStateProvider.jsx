@@ -36,7 +36,7 @@ const initialState = {
   availableAudioSources: [],
   showRemoteStream: false,
   onlineUsers: [],
-  error: "",
+  error: null,
   notOnline: false,
   incomingCall: null,
   callDeclined: false,
@@ -145,6 +145,7 @@ function reducer(state, action) {
     case "videoSources":
       return { ...state, availableVideoSources: action.payload };
     case "error":
+      console.log("in dispatch of error");
       return { ...state, error: action.payload };
 
     default:
@@ -186,11 +187,20 @@ function AppStateProvider({ children }) {
       partyHungup,
       inCallWith,
       answerPending,
+      error,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
 
   const { user } = useAuth();
+
+  const signOutRedirect = () => {
+    const clientId = "4tj2p5qmgtv47ag37qqg2iqns5";
+    const logoutUri = "https://localhost:5174?state=logout";
+    const cognitoDomain =
+      "https://us-east-2nmxpojrpq.auth.us-east-2.amazoncognito.com";
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
+  };
 
   function initCallDirection(caller, callee) {
     iAmTheCaller = caller;
@@ -341,6 +351,12 @@ function AppStateProvider({ children }) {
   }
 
   function onErrorHandler(errorMsg) {
+    console.log("onErrorHandler()", errorMsg);
+    window.alert(
+      "An error occurred talking to the SignalServer, you will be asked to log back in.",
+    );
+    appStateLogout();
+    signOutRedirect();
     dispatch({ type: "error", payload: errorMsg });
   }
 
@@ -478,6 +494,7 @@ function AppStateProvider({ children }) {
         answerCall,
         declineAnswer,
         hangUp,
+        signOutRedirect,
         localStream,
         remoteStream,
         audioSource,
@@ -496,6 +513,7 @@ function AppStateProvider({ children }) {
         partyHungup,
         inCallWith,
         answerPending,
+        error,
       }}
     >
       {children}

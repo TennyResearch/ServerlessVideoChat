@@ -12,6 +12,7 @@ function Status() {
     inCall,
     callDeclined,
     answerDeclined,
+    error,
   } = useAppState();
 
   return (
@@ -65,6 +66,12 @@ function Status() {
         {incomingCall && (
           <div className="px-2">
             Incoming call from <span className="font-bold">{incomingCall}</span>
+          </div>
+        )}
+        {error && (
+          <div className="px-2">
+            <span className="font-bold text-red-700">Error: </span>
+            {error}
           </div>
         )}
       </div>

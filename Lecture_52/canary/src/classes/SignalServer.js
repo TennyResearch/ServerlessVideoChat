@@ -119,8 +119,9 @@ export default class SignalServer {
     console.log("SocketServer: onClose");
   }
 
-  socketOnError() {
-    console.log("SocketServer: onError");
+  socketOnError(event) {
+    console.log("SocketServer: onError", event);
+    this.onError("Failed to connect to the SignalServer");
   }
 
   socketOnMessage(event) {
