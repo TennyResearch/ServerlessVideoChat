@@ -36,7 +36,7 @@ const initialState = {
   availableAudioSources: [],
   showRemoteStream: false,
   onlineUsers: [],
-  error: null,
+  error: "",
   notOnline: false,
   incomingCall: null,
   callDeclined: false,
@@ -145,7 +145,6 @@ function reducer(state, action) {
     case "videoSources":
       return { ...state, availableVideoSources: action.payload };
     case "error":
-      console.log("in dispatch of error");
       return { ...state, error: action.payload };
 
     default:
@@ -187,7 +186,6 @@ function AppStateProvider({ children }) {
       partyHungup,
       inCallWith,
       answerPending,
-      error,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -263,7 +261,7 @@ function AppStateProvider({ children }) {
     console.log("Starting a video chat with:", toEmail);
     initCallDirection(true, false);
     callSetup = initCallSetup();
-    callSetup.callerEmail = user.profile.email;
+    callSetup.callerEmail = user["email"];
     callSetup.calleeEmail = toEmail;
 
     // setup the peer connection
@@ -274,7 +272,7 @@ function AppStateProvider({ children }) {
       const offer = await peerConnection.createOffer();
       peerConnection.setLocalDescription(offer);
       callSetup.offer = offer;
-      signalServer.sendOffer(user.profile.email, toEmail, offer);
+      signalServer.sendOffer(user.email, toEmail, offer);
     } catch (err) {
       console.log(err);
       dispatch({ type: "error", payload: "Failed to create the offer" });
@@ -351,12 +349,6 @@ function AppStateProvider({ children }) {
   }
 
   function onErrorHandler(errorMsg) {
-    console.log("onErrorHandler()", errorMsg);
-    window.alert(
-      "An error occurred talking to the SignalServer, you will be asked to log back in.",
-    );
-    appStateLogout();
-    signOutRedirect();
     dispatch({ type: "error", payload: errorMsg });
   }
 
@@ -408,8 +400,8 @@ function AppStateProvider({ children }) {
     console.log("Hangup sent");
   }
 
-  function connectSignalServer(identity_token) {
-    signalServer.connect(SOCKERSERVER_URL, user.profile.email, identity_token);
+  function connectSignalServer() {
+    signalServer.connect(SOCKERSERVER_URL, user.email);
     signalServer.onUsers = onUserHandler;
     signalServer.onOffer = onOfferHandler;
     signalServer.onOfferSent = onOfferSentHandler;
@@ -513,7 +505,6 @@ function AppStateProvider({ children }) {
         partyHungup,
         inCallWith,
         answerPending,
-        error,
       }}
     >
       {children}

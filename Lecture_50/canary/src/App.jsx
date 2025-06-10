@@ -3,9 +3,9 @@ import Main from "./components/Main";
 import About from "./components/About";
 import HomePage from "./pages/HomePage";
 import PageNotFound from "./pages/PageNotFound";
-import { AuthProvider } from "react-oidc-context";
 import { AppStateProvider } from "./contexts/AppStateProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthProvider } from "react-oidc-context";
 import Welcome from "./components/Welcome";
 
 const cognitoAuthConfig = {
@@ -13,7 +13,7 @@ const cognitoAuthConfig = {
   client_id: "4tj2p5qmgtv47ag37qqg2iqns5",
   redirect_uri: "https://localhost:5173",
   response_type: "code",
-  scope: "phone openid email",
+  scope: "email openid phone",
 };
 
 function App() {

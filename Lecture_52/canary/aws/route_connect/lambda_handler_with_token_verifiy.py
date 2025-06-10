@@ -24,21 +24,28 @@ def lambda_handler(event, context):
     }
     logging.info("Connection established")
     logging.info(connectionInfo)
-    queryStringParameters = event["queryStringParameters"]
-    token = queryStringParameters["token"]
-    logger.info(f'Identity token received, length = {len(token)}')
-    claims = verify_identity_token(token, APP_CLIENT_ID, keys)
-    if claims == False:
-        logger.error("Token verification failed")
+    try:
+        queryStringParameters = event["queryStringParameters"]
+        token = queryStringParameters["token"]
+        logger.info(f'Identity token received, length = {len(token)}')
+        claims = verify_identity_token(token, APP_CLIENT_ID, keys)
+        if claims == False:
+            logger.error("Token verification failed")
+            return {
+                'statusCode': 403,
+                'body': json.dumps("Not Authorized")
+            }
+        logger.info("Token verification success. User email from token is {}".format(claims['email']))
+        return {
+            'statusCode': 200,
+            'body': json.dumps({'message': '{} connection successful'.format(claims['email'])})
+        }
+    except Exception as e:
+        logger.error(str(e))
         return {
             'statusCode': 403,
             'body': json.dumps("Not Authorized")
         }
-    logger.info("Token verification success. User email from token is {}".format(claims['email']))
-    return {
-        'statusCode': 200,
-        'body': json.dumps({'message': '{} connection successful'.format(claims['email'])})
-    }
 
 # gets the public keys for the Cognito application, this should be called on
 # cold start so we can cache these
