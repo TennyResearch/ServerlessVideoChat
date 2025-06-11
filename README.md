@@ -15,3 +15,31 @@ The final project has the complete code at the end of the course. I hope you enj
 ## Project Snapshots
 
 - Lecture_11 - Creating Our Project
+- Lecture_12 - Routes and Some Placeholders
+- Lecture_14 - The Auth Provider
+- Lecture_15 - Adding in the Header
+- Lecture_16 - Completing the Login Component
+- Lecture_17 - Adding in Status
+- Lecture_19 - The AppStateProvider
+- Lecture_20 - LocalStream and RemoteStream
+- Lecture_21 - Starting the LocalStream
+- Lecture_22 - Building the VideoInputSelector and the AudioInputSelector
+- Lecture_31 - Getting Started with the API Gateway
+- Lecture_32 - Connecting the SignalServer
+- Lecture_33 - Setup (Part One)
+- Lecture_34 - Setup (Part Two)
+- Lecture_35 - Setup (Part Three)
+- Lecture_36 - Teardown
+- Lecture_38 - Selecting the User
+- Lecture_39 - Creating the Peer Connection
+- Lecture_40 - Sending the Offer
+- Lecture_41 - Processing the Offer
+- Lecture_42 - Responding to the Offer
+- Lecture_43 - Responding to the Answer
+- Lecture_44 - Connecting the Chat
+- Lecture_45 - The Decline Path
+- Lecture_45 - The HangUp Path
+- Lecture_50 - Refactoring to use Cognito (Part One)
+- Lecture_51 - Refactoring to use Cognito (Part Two)
+- Lecture_52 - Protecting our SignalServer
+- Lecture_58 - Putting it all Together
