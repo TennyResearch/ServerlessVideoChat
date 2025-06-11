@@ -8,9 +8,11 @@ Welcome to my Udemy course! In this course we will build a complete serverless v
 
 This repository accompanies the Udemy course and provides you all of the code and resources we use throughout the course.
 
-For each lecture that we work on code, there is a folder with a starter project. This starter project represents the project progress up to that lecture in the course. If you get stuck in a lecture and you can't get the code to work, just look to the next lecture's starter project and that will give you the final code for the current project. Or, if you just want to move on, you can use the starter project in the next lecture to keep up with the course.
+For each lecture that we work on code, there is a folder with the lecture's final project. This project represents the project progress up to the end of that lecture in the course. If you get stuck in a lecture and you can't get the code to work, just look to the lecture's project and that will give you the final code for the current project. Or, if you just want to move on, you can use the project in the lecture to keep up with the course.
 
-The final project has the complete code at the end of the course. I hope you enjoy this course! Don't forget, if you have suggestions, improvments, or new functionality you would like to see incorporated in the course, just fork the repository, make your changes and submit a pull request.
+The final lecture has the complete code at the end of the course. I hope you enjoy this course!
+
+Don't forget, if you have suggestions, improvments, or new functionality you would like to see incorporated in the course, just send me an email at: tennyresearch@gmail.com. If you make changes, extensions or other improvements that you would like to share with other students, just clone the repository of the last lecture, make your changes and send me a link to your repository. I'll link it in Student Contributions. Thanks!
 
 ## Project Snapshots
 
