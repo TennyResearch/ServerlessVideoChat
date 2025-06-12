@@ -11,7 +11,7 @@ import Welcome from "./components/Welcome";
 const cognitoAuthConfig = {
   authority: "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_nMxpoJRPq",
   client_id: "4tj2p5qmgtv47ag37qqg2iqns5",
-  redirect_uri: "https://localhost:5173",
+  redirect_uri: "https://canarychat.click/",
   response_type: "code",
   scope: "email openid phone",
 };

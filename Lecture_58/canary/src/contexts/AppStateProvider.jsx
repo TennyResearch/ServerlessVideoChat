@@ -194,7 +194,7 @@ function AppStateProvider({ children }) {
 
   const signOutRedirect = () => {
     const clientId = "4tj2p5qmgtv47ag37qqg2iqns5";
-    const logoutUri = "https://localhost:5173?state=logout";
+    const logoutUri = "https://canarychat.click/?state=logout";
     const cognitoDomain =
       "https://us-east-2nmxpojrpq.auth.us-east-2.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
