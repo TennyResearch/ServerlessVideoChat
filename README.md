@@ -12,6 +12,8 @@ For each lecture that we work on code, there is a folder with the lecture's fina
 
 The final lecture has the complete code at the end of the course. I hope you enjoy this course!
 
+Make sure you run: **npm install** in the canary folder to install the dependencies!
+
 Don't forget, if you have suggestions, improvments, or new functionality you would like to see incorporated in the course, just send me an email at: tennyresearch@gmail.com. If you make changes, extensions or other improvements that you would like to share with other students, just clone the repository, grab the code for the lecture you want to change, make your changes and send me a link to your repository. I'll link it in Student Contributions. Thanks!
 
 ## Project Snapshots
