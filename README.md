@@ -4,7 +4,7 @@
 
 Welcome to my Udemy course! In this course we will build a complete serverless video chat application using React, WebRTC and a bunch of Amazon AWS Cloud serverless features. This is a great in depth course on a lot of modern and important technologies and I'm so excited that you're here to take a deep dive into these technologies with me.
 
-If you haven't signed up for the course, click [here](https://www.udemy.com/) to sign up!
+If you haven't signed up for the course, click [here](https://www.udemy.com/course/build-a-serverless-video-chat-app-with-react-and-webrtc/?referralCode=7451E83CAD8ED4BCD989) to sign up!
 
 ## Structure of this Respository
 
